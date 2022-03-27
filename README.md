@@ -46,6 +46,5 @@
 40.java使用适配器把字节转换为字符
 41.spring使用代理+适配器+拦截器实现AOP功能
 42.spring使用工厂方法管理所有的bean
-<a href="https://ke.qq.com/course/4815435?tuin=1a889f63" >
-![微信截图_20220326123324](https://user-images.githubusercontent.com/20094364/160265731-5ebb0f12-9e3a-4d6f-9591-2c0aefc91aca.png)
-</a>
+
+![微信截图_20220326123324](https://user-images.githubusercontent.com/20094364/160265786-47ffc602-3241-43bf-84ae-c28681fda2f3.png)
