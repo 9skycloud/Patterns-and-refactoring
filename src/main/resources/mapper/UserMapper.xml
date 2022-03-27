@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace：用来区别不同的类的名字 -->
+<mapper namespace="com.skycloud.refactor.proxy.UserMapper">
+    <select id="select" resultMap="users" statementType="PREPARED">
+        select * from user
+    </select>
+    <resultMap id="users" type="User">
+        <result property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="sex" column="sex" />
+        <result property="address" column="address" />
+        <result property="birthday" column="birthday" />
+    </resultMap>
+</mapper>

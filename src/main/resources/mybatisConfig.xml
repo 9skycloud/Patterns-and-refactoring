@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!--引入外部properties文件 -->
+	<properties resource="jdbc.properties"></properties>
+	<settings>
+		<setting name="defaultExecutorType" value="REUSE" />
+	</settings>
+	<typeAliases>
+		<package name="com.skycloud.refactor.proxy.pojo" />
+	</typeAliases>
+	<plugins>
+		<plugin interceptor="com.skycloud.refactor.proxy.mybatis.plugin.MyIntercepter">
+			<property name="threshold" value="40"/>
+		</plugin>
+	</plugins>
+	<!-- 配置环境 -->
+	<environments default="mysql">
+		<!--配置mysql的环境 -->
+		<environment id="mysql">
+			<!--配置事务的类型 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!--配置连接池 -->
+			<dataSource type="POOLED">
+				<!--配置连接数据库的4个基本信息 -->
+				<property name="driver" value="${jdbc.driverClass}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!--指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件 -->
+	<mappers>
+		<mapper resource="mapper/User.xml" />
+		<mapper resource="mapper/UserMapper.xml" />
+	</mappers>
+
+</configuration>
